@@ -1,5 +1,5 @@
 import pandas as pd
-df = pd.read_csv('GoogleApps.csv')
+df = pd.read_csv('pandas_lessons\\GoogleApps.csv')
 
 # Скільки коштує (Price) найдешевший платний додаток (Type == 'Paid)?
 
@@ -20,3 +20,9 @@ df = pd.read_csv('GoogleApps.csv')
 
 # *Який середній (mean) рейтинг (Rating) додатків вартістю (Price) понад 20 доларів
 # з кількістю установок (Installs) понад 10000?
+# art_and = df[df['Category']=='ART_AND_DESIGN']
+# print(art_and['Installs'].median())
+
+
+free=df[df['Type']=='Free']['Reviews'].max()
+paid=df[df['Type']=='Paid']['Reviews'].max()
